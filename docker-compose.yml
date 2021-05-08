@@ -1,0 +1,17 @@
+version: '3'
+services:
+    web:
+      build:
+        context: .
+        dockerfile: front/Dockerfile
+      ports:
+        - "8050:8050"
+      expose: 
+        - "8050"
+      volumes:
+        - ./front:/usr/local/dash/src  
+        - ./datasets:/usr/local/dash/datasets  
+      container_name: front
+      tty: true
+      stdin_open: false
+      entrypoint: [ "python3", "./src/app.py" ]
