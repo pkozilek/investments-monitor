@@ -1,5 +1,6 @@
 from dash.dependencies import Input, Output
 import dash_html_components as html
+from libs.transformations.assets_analysis import get_asset_timeserie
 
 
 def add_load_page_callback(app, data):
@@ -8,5 +9,5 @@ def add_load_page_callback(app, data):
         [Input("load-page-trigger", "children")],
     )
     def load_page(_):
-        print(data.index_values)
+        get_asset_timeserie(1, data)
         return html.H1("PAGE")

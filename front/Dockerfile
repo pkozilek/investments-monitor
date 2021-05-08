@@ -20,4 +20,7 @@ RUN pip install openpyxl
 
 EXPOSE 8050
 
+ENV LANG C.UTF-8
+ENV LC_ALL C.UTF-8
+
 WORKDIR ${DASH_HOME}
